@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pronk Zone Products</title>
+    <link rel="stylesheet" href="css_temp/products_css.css">
+    <link rel="stylesheet" href="css_temp/header.css">
+    <link rel="stylesheet" href="css_temp/footer.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/">
+
+</head>
+<body>
+    <header class="header" >
+        <div class="header-left">
+            <a href="index.html"><img src="res/img/Pronk_Logo.png" alt="Pronk_Logo" width="100" height="50" class="Pronk_Logo"></a>
+            <a href="about_us.html" alt="Jump to about_us page" class="header_about_us">About Us</a>
+            <a href="products.html" alt="Jump to products page" class="header_products">Products</a>
+            <a href="support.html"  alt="Jump to support page" class="header_support">Support</a>
+        </div>
+        <div class="header-right">
+            <img src="res/img/Scearch_icon_black.png" width="25" height="25">
+            <img src="res/img/Lang_icon_black.png" width="25" height="25">
+        </div>
+    </header>
+
+    <main>
+        <!-- banner section -->
+        <section class="banner-section">
+            <div class="banner-content">
+                <h1>精心設計 為你而生</h1>
+                <p>少一點煩惱 多一點美好</p>
+            </div>
+        </section>
+
+        <!-- products section -->
+        <section class="product-grid-section">
+
+            <!-- product-grid-main-wrapper, flex -->
+            <div class="product-grid-main-wrapper">
+                
+                <!-- filter -->
+                <div class="filter-wrapper">
+                    <form class="filter-series">
+                        <h3>系列/情境</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="series" id="series-checkbox-0" value="room-filter" class="input-checkbox">
+                                <label for="series-checkbox-0">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">Room 空間</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="series" id="series-checkbox-1" value="life-filter" class="input-checkbox">
+                                <label for="series-checkbox-1">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">Life 日常</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="series" id="series-checkbox-2" value="fun-filter" class="input-checkbox">
+                                <label for="series-checkbox-2">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">Fun 樂趣</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="series" id="series-checkbox-3" value="watch-filter" class="input-checkbox">
+                                <label for="series-checkbox-3">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">Pronk Watch 模組化穿戴裝置</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </form>
+                    <form class="filter-price">
+                        <h3>價錢區間</h3>
+                        <ul class="filter-list">
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="price" id="price-checkbox-0" value="0~1000" class="input-checkbox">
+                                <label for="price-checkbox-0" class="filter-list-item-label">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">0~1000</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="price" id="price-checkbox-1" value="1001~5000" class="input-checkbox">
+                                <label for="price-checkbox-1" class="filter-list-item-label">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">1001~5000</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="price" id="price-checkbox-2" value="5001~10000" class="input-checkbox">
+                                <label for="price-checkbox-2" class="filter-list-item-label">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">5001~10000</span>
+                                </label>
+                            </li>
+                            <li class="filter-list-item">
+                                <input type="checkbox" name="price" id="price-checkbox-3" value="10000~" class="input-checkbox">
+                                <label for="price-checkbox-3" class="filter-list-item-label">
+                                    <span class="checkbox-icon"></span>
+                                    <span class="filter-title">10000~~</span>
+                                </label>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+
+                <!-- product-grid, flex -->
+                <div class="product-grid">
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="宿舍晨安棒棒" class="product-img">
+                            <h3>宿舍晨安棒棒</h3>
+                            <p>對付貪睡室友的利器</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="美食芳香劑" class="product-img">
+                            <h3>美食芳香劑</h3>
+                            <p>空氣中瀰漫著泡麵香，誰不喜歡？</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="amico del bagno" class="product-img">
+                            <h3>Amico del bagno</h3>
+                            <p>馬桶好朋友</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="鼻塞" class="product-img">
+                            <h3>鼻塞</h3>
+                            <p>耳塞隔絕噪音，鼻塞隔絕氣味</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="高科技防水雨傘" class="product-img">
+                            <h3>高科技防水雨傘</h3>
+                            <p>帶有鏡頭和音響的雨傘</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="靜音吹風機" class="product-img">
+                            <h3>靜音吹風機</h3>
+                            <p>安靜吹頭不擾民</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="衣物污漬修補神器" class="product-img">
+                            <h3>衣物污漬修補神器</h3>
+                            <p>適用各種布料及顏色</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="電擊口香糖" class="product-img">
+                            <h3>電擊口香糖</h3>
+                            <p>兒時回憶強化版</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="病毒USB" class="product-img">
+                            <h3>病毒USB</h3>
+                            <p>記得別插進自己的電腦</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="啾啾鞋" class="product-img">
+                            <h3>啾啾鞋</h3>
+                            <p>可自訂音效的啾啾鞋</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="黃色小鴨" class="product-img">
+                            <h3>黃色小鴨</h3>
+                            <p>一般的黃色小鴨</p>
+                        </a>
+                    </div>
+                    <div class="product-grid-item">
+                        <a href="#" class="product-dscrp">
+                            <img src="res/img/example1x1.png" alt="Pronk Watch" class="product-img">
+                            <h3>Pronk Watch模組化穿戴裝置</h3>
+                            <p>模組化設計，隨心選擇你需要的功能！</p>
+                        </a>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_section1">
+            <div class="footer_container1">
+                <a href="about_us.html" alt="About Us" class="footer_big_index">About Us</a>
+                <a href="about_us.html/#discover_us" alt="Discover us" class="footer_index">Discover us</a>
+                <a href="about_us.html/#environment_policy" alt="Environment Policy" class="footer_index">Environment Policy</a>
+                <a href="about_us.html/#Jobs" alt="Jobs" class="footer_index">Jobs</a>
+            </div>
+            <div class="footer_container2">
+                <a href="products.html" alt="Products" class="footer_big_index">Product</a>
+                <a href="products.html" alt="Room" class="footer_index">Room</a>
+                <a href="products.html" alt="Life" class="footer_index">Life</a>
+                <a href="products.html" alt="Fun" class="footer_index">Fun</a>
+           </div>
+           <div class="footer_container3">
+                <a href="support.html" alt="Support" class="footer_big_index">Support</a>
+                <a href="support.html/#downloads" alt="Downloads" class="footer_index">Downloads</a>
+                <a href="support.html/#faq" alt="FAQ" class="footer_index">FAQ</a>
+                <a href="support.html/#service" alt="Service" class="footer_index">Service</a>
+            </div>
+        </div>
+        <hr class="line">
+        <div class="footer_container4">
+            <a href="https://www.facebook.com/?locale=zh_TW" alt="Facebook link" class="footer_socialmedias_icon"><img src="res/img/facebook.png" width="25" height="25"></a>
+            <a href="https://www.instagram.com/?utm_source=pwa_homescreen&__pwa=1" alt="Instagram link" class="footer_socialmedias_icon"><img src="res/img/instagram-logo.png" width="25" height="25"></a>
+            <a href="https://x.com/" alt="X link" class="footer_socialmedias_icon"><img src="res/img/twitter-new.png" width="25" height="25"></a>
+        </div>
+    </footer>
+</body>
+</html>

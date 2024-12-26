@@ -58,14 +58,16 @@ async function loadProductDetails(productId) {
             document.getElementById('product-name').textContent = product.name;
         }
         if (document.getElementById('product-description')) {
-            document.getElementById('product-description').textContent = product.description;
+            const descriptionContent = product.description.replace(/\n/g, '<br>'); // 替換 \n 為 <br>
+            document.getElementById('product-description').innerHTML = descriptionContent;
         }
         if (document.getElementById('product-specifications')) {
-            document.getElementById('product-specifications').textContent = product.specifications;
+            const specificationsContent = product.specifications.replace(/\n/g, '<br>'); // 替換 \n 為 <br>
+            document.getElementById('product-specifications').innerHTML = specificationsContent;
         }
         if (document.getElementById('product-packaging')) {
-            const packagingContent = product.packaging || "無包裝資料";
-            document.getElementById('product-packaging').textContent = packagingContent;
+            const packagingContent = (product.packaging || "無包裝資料").replace(/\n/g, '<br>'); // 替換 \n 為 <br>
+            document.getElementById('product-packaging').innerHTML = packagingContent;
             console.log("包裝及內容物:", packagingContent);
         }
         if (document.getElementById('ad-image-1')) {
@@ -74,7 +76,7 @@ async function loadProductDetails(productId) {
         if (document.getElementById('ad-image-2')) {
             document.getElementById('ad-image-2').src = product.ads_url2;
         }
-        if(document.getElementById('ad-image-3')) {
+        if (document.getElementById('ad-image-3')) {
             document.getElementById('ad-image-3').src = product.ads_url3;
         }
 

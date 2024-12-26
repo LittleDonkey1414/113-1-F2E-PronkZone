@@ -37,3 +37,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const filterForm = document.querySelector('.filter-series');
+    const productGrid = document.querySelector('.product-grid');
+    const products = Array.from(productGrid.querySelectorAll('.product-grid-item'));
+
+    // 監聽篩選器變化
+    filterForm.addEventListener('change', function(event) {
+        if (event.target.type === 'checkbox') {
+            filterProducts();
+        }
+    });
+
+    function filterProducts() {
+        const checkedBoxes = Array.from(filterForm.querySelectorAll('input[type="checkbox"]:checked'));
+        const selectedCategories = checkedBoxes.map(checkbox => checkbox.value);
+
+        // 如果沒有選中任何篩選器，則顯示所有產品
+        if (selectedCategories.length === 0) {
+            products.forEach(product => product.style.display = 'block');
+            return;
+        }
+
+        products.forEach(product => {
+            const productCategories = product.querySelector('.product-dscrp').classList;
+            const matches = selectedCategories.some(category => productCategories.contains(category));
+            product.style.display = matches ? 'block' : 'none';
+        });
+    }
+});

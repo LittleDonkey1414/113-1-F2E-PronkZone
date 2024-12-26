@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* 確保垂直置中 */
+    height: 50px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+.header-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 120px;
+    height: 100%;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 讓文字居中 */
+    width: 400px;
+    height: 50px;
+    font-size: 15px;
+    font-family: "Noto Sans"; /* 已移除 font-weight */
+}
+
+.index {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* 控制中間文字間距 */
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-items: space-around;
+    margin-right: 30px;
+    gap: 20px;
+}
+
+a {
+    color: #050604;
+    text-decoration: none;
+    font-weight: normal; /* 確保文字無粗體 */
+}

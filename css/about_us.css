@@ -1,0 +1,30 @@
+/* global */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: "Noto Sans TC";
+    background-color: hsla(0, 0%, 98%, 1);
+    margin: 0;
+}
+
+.abus h1 {
+    text-align: center;
+}
+
+.abus div{
+    margin: 60px 0;
+}
+
+.abus div h2{
+    text-align: center;
+}
+
+.abus div p{
+    text-align: center;
+}

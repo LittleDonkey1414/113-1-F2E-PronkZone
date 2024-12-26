@@ -7,16 +7,16 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 document.addEventListener('DOMContentLoaded', async () => {
     const productData = [
-        { id: "Stick", elementId: "product1" },
-        { id: "Instant noodle", elementId: "product2" },
-        { id: "BY2", elementId: "product3" },
-        { id: "Mask", elementId: "product4" },
-        { id: "pro Version", elementId: "product5" },
-        { id: "Dryer", elementId: "product6" },
-        { id: "Gum", elementId: "product7" },
-        { id: "Fake Mouse", elementId: "product8" },
-        { id: "Chew", elementId: "product9" },
-        { id: "Duck", elementId: "product10" }
+        { id: "Stick", elementId: "product_1" },
+        { id: "Instant noodle", elementId: "product_2" },
+        { id: "BY2", elementId: "product_3" },
+        { id: "Mask", elementId: "product_4" },
+        { id: "pro Version", elementId: "product_5" },
+        { id: "Dryer", elementId: "product_6" },
+        { id: "Gum", elementId: "product_7" },
+        { id: "Fake Mouse", elementId: "product_8" },
+        { id: "Chew", elementId: "product_9" },
+        { id: "Duck", elementId: "product_10" }
     ];
 
     for (const product of productData) {
@@ -37,29 +37,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 });
-async function loadProducts() {
-    const { data: products, error } = await supabase
-        .from('products')
-        .select('*');
-
-    if (error) {
-        console.error("無法加載商品資料：", error.message);
-        return;
-    }
-
-    const productGrid = document.querySelector('.product-grid');
-    products.forEach(product => {
-        const productItem = document.createElement('div');
-        productItem.className = 'product-grid-item';
-        productItem.innerHTML = `
-            <a href="products_pages.html?id=${product.id}" class="product-dscrp">
-                <img src="${product.image_url}" alt="${product.name}" class="product-img">
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-            </a>
-        `;
-        productGrid.appendChild(productItem);
-    });
-}
-
-document.addEventListener('DOMContentLoaded', loadProducts);

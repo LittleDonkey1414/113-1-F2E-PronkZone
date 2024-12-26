@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css_temp/style.css">
-    <link rel="stylesheet" href="css_temp/header.css">
-    <link rel="stylesheet" href="css_temp/footer.css">
-    <link rel="stylesheet" href="css_temp/products_pages.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products_pages.css">
     <link rel="stylesheet" href="xZoom-master/src/xzoom.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js_temp/products_pages.js" defer></script>
+    <script src="js/products_pages.js" defer></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Product Name</title>
 </head>
@@ -17,18 +15,12 @@
 <body>
     <div class="Product_Page">
         <!-- Header -->
-        <header class="header">
-            <div class="header-left">
-                <a href="index.html"><img src="res/img/Pronk_Logo.png" alt="Pronk Logo" width="115" height="50" class="Pronk_Logo"></a>
-                <a href="about_us.html" class="header_about_us">About Us</a>
-                <a href="products.html" class="header_products">Products</a>
-                <a href="support.html" class="header_support">Support</a>
-            </div>
-            <div class="header-right">
-                <img src="res/img/Scearch_icon_black.png" width="25" height="25" alt="Search Icon">
-                <img src="res/img/Lang_icon_black.png" width="25" height="25" alt="Language Icon">
-            </div>
-        </header>
+        <div id="header"></div>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => document.getElementById('header').innerHTML = data);
+    </script>
 
         <!-- Body -->
         <div class="product_page_body">
@@ -117,80 +109,63 @@
         </div>
         <!--Scroll Image Gallery-->
         <div  class="image_gallery_title"><h2>Discover More</h2></div>
-        <div class="scroll_gallery">
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
+        <div class="Scroll">
+            <button class="scroll_btn_left"  onclick="scrollGallery(-1)"><img src="res/img/arrow_back_ios_24dp_050604_FILL0_wght400_GRAD0_opsz24.png" width="20px" height="20px" class="scroll_btn"></button>
+            <button class="scroll_btn_right" onclick="scrollGallery(1)"><img src="res/img/arrow_forward_ios_24dp_050604_FILL0_wght400_GRAD0_opsz24.png"width="20px" height="20px" class="scroll_btn"></button>
+            <div class="scroll_gallery">
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>
+                <div class="product_introduction">
+                    <a href="products_pages.html">
+                        <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
+                    </a>    
+                    <div class="product_introduction_text">商品名字叫做名字</div>
+                </div>            
             </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>
-            <div class="product_introduction">
-                <a href="products_pages.html">
-                    <img src="res/img/example1x1.png" width="250px" height="250px" alt="Example Image">
-                </a>    
-                <div class="product_introduction_text">商品名字叫做名字</div>
-            </div>            
         </div>
             <div class="clearfix"></div>
         <!-- Footer -->
-        <footer class="footer">
-            <div class="footer_section1">
-                <div class="footer_container1">
-                    <a href="about_us.html" class="footer_big_index">About Us</a>
-                    <a href="about_us.html/#discover_us" class="footer_index">Discover Us</a>
-                    <a href="about_us.html/#environment_policy" class="footer_index">Environment Policy</a>
-                    <a href="about_us.html/#Jobs" class="footer_index">Jobs</a>
-                </div>
-                <div class="footer_container2">
-                    <a href="products.html" class="footer_big_index">Product</a>
-                    <a href="products.html" class="footer_index">Room</a>
-                    <a href="products.html" class="footer_index">Life</a>
-                    <a href="products.html" class="footer_index">Fun</a>
-                </div>
-                <div class="footer_container3">
-                    <a href="support.html" class="footer_big_index">Support</a>
-                    <a href="support.html/#downloads" class="footer_index">Downloads</a>
-                    <a href="support.html/#faq" class="footer_index">FAQ</a>
-                    <a href="support.html/#service" class="footer_index">Service</a>
-                </div>
-            </div>
-            <hr class="line">
-            <div class="footer_container4">
-                <a href="https://www.facebook.com/?locale=zh_TW" class="footer_socialmedias_icon"><img src="res/img/facebook.png" width="25" height="25" alt="Facebook"></a>
-                <a href="https://www.instagram.com/?utm_source=pwa_homescreen&__pwa=1" class="footer_socialmedias_icon"><img src="res/img/instagram-logo.png" width="25" height="25" alt="Instagram"></a>
-                <a href="https://x.com/" class="footer_socialmedias_icon"><img src="res/img/twitter-new.png" width="25" height="25" alt="Twitter"></a>
-            </div>
-        </footer>
+        <div id="footer"></div>
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => document.getElementById('footer').innerHTML = data);
+        </script>
+        
     </div>
 
     <script src="xZoom-master/src/xzoom.js"></script>  

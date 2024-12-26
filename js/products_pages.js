@@ -1,164 +1,11 @@
-
-$(document).ready(function() {
-	//以ul li包子選單
-	$('.cart>li>a').click(function(event) {
-		event.preventDefault();
-		$(this).toggleClass('active');
-		$(this).siblings('ul').slideToggle(200);
-		});
-	//html以div h3 h5包子選單
-});
-
-(function ($) {
-    $(document).ready(function() {
-        $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
-        $('.xzoom2, .xzoom-gallery2').xzoom({position: '#xzoom2-id', tint: '#ffa200'});
-        $('.xzoom3, .xzoom-gallery3').xzoom({position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden'});
-        $('.xzoom4, .xzoom-gallery4').xzoom({tint: '#006699', Xoffset: 15});
-        $('.xzoom5, .xzoom-gallery5').xzoom({tint: '#006699', Xoffset: 15});
-
-        //Integration with hammer.js
-        var isTouchSupported = 'ontouchstart' in window;
-
-        if (isTouchSupported) {
-            //If touch device
-            $('.xzoom, .xzoom2, .xzoom3, .xzoom4, .xzoom5').each(function(){
-                var xzoom = $(this).data('xzoom');
-                xzoom.eventunbind();
-            });
-            
-            $('.xzoom, .xzoom2, .xzoom3').each(function() {
-                var xzoom = $(this).data('xzoom');
-                $(this).hammer().on("tap", function(event) {
-                    event.pageX = event.gesture.center.pageX;
-                    event.pageY = event.gesture.center.pageY;
-                    var s = 1, ls;
-    
-                    xzoom.eventmove = function(element) {
-                        element.hammer().on('drag', function(event) {
-                            event.pageX = event.gesture.center.pageX;
-                            event.pageY = event.gesture.center.pageY;
-                            xzoom.movezoom(event);
-                            event.gesture.preventDefault();
-                        });
-                    }
-    
-                    xzoom.eventleave = function(element) {
-                        element.hammer().on('tap', function(event) {
-                            xzoom.closezoom();
-                        });
-                    }
-                    xzoom.openzoom(event);
-                });
-            });
-
-        $('.xzoom4').each(function() {
-            var xzoom = $(this).data('xzoom');
-            $(this).hammer().on("tap", function(event) {
-                event.pageX = event.gesture.center.pageX;
-                event.pageY = event.gesture.center.pageY;
-                var s = 1, ls;
-
-                xzoom.eventmove = function(element) {
-                    element.hammer().on('drag', function(event) {
-                        event.pageX = event.gesture.center.pageX;
-                        event.pageY = event.gesture.center.pageY;
-                        xzoom.movezoom(event);
-                        event.gesture.preventDefault();
-                    });
-                }
-
-                var counter = 0;
-                xzoom.eventclick = function(element) {
-                    element.hammer().on('tap', function() {
-                        counter++;
-                        if (counter == 1) setTimeout(openfancy,300);
-                        event.gesture.preventDefault();
-                    });
-                }
-
-                function openfancy() {
-                    if (counter == 2) {
-                        xzoom.closezoom();
-                        $.fancybox.open(xzoom.gallery().cgallery);
-                    } else {
-                        xzoom.closezoom();
-                    }
-                    counter = 0;
-                }
-            xzoom.openzoom(event);
-            });
-        });
-        
-        $('.xzoom5').each(function() {
-            var xzoom = $(this).data('xzoom');
-            $(this).hammer().on("tap", function(event) {
-                event.pageX = event.gesture.center.pageX;
-                event.pageY = event.gesture.center.pageY;
-                var s = 1, ls;
-
-                xzoom.eventmove = function(element) {
-                    element.hammer().on('drag', function(event) {
-                        event.pageX = event.gesture.center.pageX;
-                        event.pageY = event.gesture.center.pageY;
-                        xzoom.movezoom(event);
-                        event.gesture.preventDefault();
-                    });
-                }
-
-                var counter = 0;
-                xzoom.eventclick = function(element) {
-                    element.hammer().on('tap', function() {
-                        counter++;
-                        if (counter == 1) setTimeout(openmagnific,300);
-                        event.gesture.preventDefault();
-                    });
-                }
-
-                function openmagnific() {
-                    if (counter == 2) {
-                        xzoom.closezoom();
-                        var gallery = xzoom.gallery().cgallery;
-                        var i, images = new Array();
-                        for (i in gallery) {
-                            images[i] = {src: gallery[i]};
-                        }
-                        $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
-                    } else {
-                        xzoom.closezoom();
-                    }
-                    counter = 0;
-                }
-                xzoom.openzoom(event);
-            });
-        });
-
-        } else {
-            //If not touch device
-
-            //Integration with fancybox plugin
-            $('#xzoom-fancy').bind('click', function(event) {
-                var xzoom = $(this).data('xzoom');
-                xzoom.closezoom();
-                $.fancybox.open(xzoom.gallery().cgallery, {padding: 0, helpers: {overlay: {locked: false}}});
-                event.preventDefault();
-            });
-           
-            //Integration with magnific popup plugin
-            $('#xzoom-magnific').bind('click', function(event) {
-                var xzoom = $(this).data('xzoom');
-                xzoom.closezoom();
-                var gallery = xzoom.gallery().cgallery;
-                var i, images = new Array();
-                for (i in gallery) {
-                    images[i] = {src: gallery[i]};
-                }
-                $.magnificPopup.open({items: images, type:'image', gallery: {enabled: true}});
-                event.preventDefault();
-            });
-        }
+$(document).ready(function () {
+    // 下拉選單切換
+    $('.cart > li > a').click(function (event) {
+        event.preventDefault(); // 阻止默認跳轉行為
+        $(this).toggleClass('active'); // 切換樣式
+        $(this).next('ul').slideToggle(200); // 展開/收起子選單
     });
-})(jQuery);
+});
 
 function scrollGallery(direction) {
     const gallery = document.querySelector('.scroll_gallery');
@@ -166,4 +13,74 @@ function scrollGallery(direction) {
     gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
 }
 
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
+// 初始化 Supabase
+const supabaseUrl = "https://ouhmuenydxyzotcbhkkm.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im91aG11ZW55ZHh5em90Y2Joa2ttIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzQ2Nzk4OTQsImV4cCI6MjA1MDI1NTg5NH0.9Yf4kVtgTZtw1sFUlAwF1NN7IofniZlitZJfzyFWAww";
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+// 從 URL 解析商品 ID
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get("id");
+
+if (productId) {
+    console.log("解析出的商品 ID:", productId);
+    loadProductDetails(productId);
+} else {
+    alert("未提供商品 ID，將返回商品列表！");
+    window.location.href = "products.html";
+}
+
+async function loadProductDetails(productId) {
+    try {
+        console.log("解析出的商品 ID:", productId);
+
+        // 從 Supabase 查詢商品資料
+        const { data: product, error } = await supabase
+            .from('products')
+            .select('*')
+            .eq('id', productId)
+            .maybeSingle(); // 使用 maybeSingle() 代替 single()
+
+        if (error) throw error;
+        if (!product) {
+            throw new Error("未找到商品資料，請確認商品 ID 是否正確！");
+        }
+
+        console.log("查詢結果:", product);
+
+        // 更新商品內容（檢查元素是否存在）
+        if (document.getElementById('product-image')) {
+            document.getElementById('product-image').src = product.image_url;
+        }
+        if (document.getElementById('product-name')) {
+            document.getElementById('product-name').textContent = product.name;
+        }
+        if (document.getElementById('product-description')) {
+            document.getElementById('product-description').textContent = product.description;
+        }
+        if (document.getElementById('product-specifications')) {
+            document.getElementById('product-specifications').textContent = product.specifications;
+        }
+        if (document.getElementById('product-packaging')) {
+            const packagingContent = product.packaging || "無包裝資料";
+            document.getElementById('product-packaging').textContent = packagingContent;
+            console.log("包裝及內容物:", packagingContent);
+        }
+        if (document.getElementById('ad-image-1')) {
+            document.getElementById('ad-image-1').src = product.ads_url1;
+        }
+        if (document.getElementById('ad-image-2')) {
+            document.getElementById('ad-image-2').src = product.ads_url2;
+        }
+        if(document.getElementById('ad-image-3')) {
+            document.getElementById('ad-image-3').src = product.ads_url3;
+        }
+
+    } catch (err) {
+        console.error("無法加載商品資料：", err.message);
+        alert("商品資料加載失敗：" + err.message);
+        window.location.href = "products.html";
+    }
+}

@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/products_pages.css">
-    <link rel="stylesheet" href="xZoom-master/src/xzoom.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/products_pages.js" defer></script>
+    <script type="module" src="js/products_pages.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Product Name</title>
+    <title class="product_name">Product Name</title>
 </head>
 
 <body>
@@ -30,44 +29,35 @@
             <div class="product_simple_info_left">
                 <div class="container">
                     <!-- Default Section Start -->
-                    <section id="default" class="padding-top0">
-                        <div class="row">
-                            <div class="large-5 column">
-                                <div class="xzoom-container">
-                                    <img class="xzoom-gallery" src="res/img/1.png" xpreview="res/img/1.png" title="The description goes here" height="600" width="600">
-                                    <div class="xzoom-thumbs">
-                                        <a href="res/img/1.png"><img class="xzoom-gallery" width="80" src="res/img/1.png" title="The description goes here"></a>
-                                        <a href="res/img/2.png"><img class="xzoom-gallery" width="80" src="res/img/2.png" title="The description goes here"></a>
-                                        <a href="res/img/3.png"><img class="xzoom-gallery" width="80" src="res/img/3.png" title="The description goes here"></a>
-                                        <a href="res/img/4.png"><img class="xzoom-gallery" width="80" src="res/img/4.png" title="The description goes here"></a>
-                                    </div>
-                                </div>        
-                            </div>
-                        </div>
-                    </section>
+                    <div class="container">
+                        <!-- 單張圖片 -->
+                        <img id="product-image" src="res/img/1.png" alt="Product Image" height="600" width="600">
+                    </div>
                     <!-- Default Section End -->
                 </div>
             </div>
 
             <div class="product_simple_info_right">
+                <div class="container">
                 <div class="product_name">
-                    <h3>Product Name Example</h3>
+                    <h3 id="product-name">Product Name Example</h3>
                 </div>
                 <div class="product_intro">
-                    <p>This is a product's introduction. This is an introduction. This is a product's introduction.</p>
+                    <p id="product-description">This is a product's introduction.</p>
                 </div>
+            </div>
                 <div class="Product_Page_intro">
                     <ul class="cart">
                         <li>
                             <a href="#" class="border title">規格與詳細資訊</a>
                             <ul>
-                                <li>這是規格與詳細資訊，這是規格與詳細資訊，這是規格與詳細資訊，這是規格與詳細資訊。</li>
+                                <li id="product-specifications">這是規格與詳細資訊。</li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="border title">包裝內容物</a>
+                            <a href="#" class="border title">包裝及內容物</a>
                             <ul>
-                                <li>裡面有這些東西喔，裡面有這些東西喔，裡面有這些東西喔，裡面有這些東西喔。</li>
+                                <li id="product-packaging"></li>
                             </ul>
                         </li>
                     </ul>
@@ -78,36 +68,36 @@
         <!-- Mid Page -->
         <div class="mid_blank"></div>
         <div class="mid_page_img">
-            <img src="res/img/EXAMPLE.png" width="100%" height="100%" alt="Example Image">
-            <img src="res/img/EXAMPLE.png" width="100%" height="100%" alt="Example Image">
-            <img src="res/img/EXAMPLE.png" width="100%" height="100%" alt="Example Image">
+            <img id="ad-image-1" src="res/img/EXAMPLE.png" alt="Ad 1" height="100%" width="100%">
+            <img id="ad-image-2" src="res/img/EXAMPLE.png" alt="Ad 2" height="100%" width="100%">
+            <img id="ad-image-3" src="res/img/EXAMPLE.png" alt="Ad 3" height="100%" width="100%">
         </div>
 
         <!-- Celebrities -->
         <div class="cele_box">
             <div class="cele1">
-                <img src="res/img/example1x1.png" width="200" height="200" class="cele_pic" alt="Celebrity 1">
+                <img src="res/img/sit down plz.png" width="200" height="200" class="cele_pic" alt="Celebrity 1">
                 <div class="cele_textbox">
                     <h3>Sit Down Plz</h3>
                     <p class="cele_text">I want to sit down.</p>
                 </div>
             </div>
             <div class="cele2">
-                <img src="res/img/example1x1.png" width="200" height="200" class="cele_pic" alt="Celebrity 2">
+                <img src="res/img/xi le cow.png" width="200" height="200" class="cele_pic" alt="Celebrity 2">
                 <div class="cele_textbox">
                     <h3>Xi Le Cow</h3>
                     <p class="cele_text">Li Xi Le Cow. This is a masterpiece.</p>
                 </div>
             </div>
             <div class="cele3">
-                <img src="res/img/example1x1.png" width="200" height="200" class="cele_pic" alt="Celebrity 3">
+                <img src="res/img/makabaka.png" width="200" height="200" class="cele_pic" alt="Celebrity 3">
                 <div class="cele_textbox">
                     <h3>Ma Ka Ba Ka</h3>
                     <p class="cele_text">Goodnight Ma Ka Ba Ka.</p>
                 </div>
             </div>
         </div>
-        <!--Scroll Image Gallery-->
+        <!-- Scroll Image Gallery
         <div  class="image_gallery_title"><h2>Discover More</h2></div>
         <div class="Scroll">
             <button class="scroll_btn_left"  onclick="scrollGallery(-1)"><img src="res/img/arrow_back_ios_24dp_050604_FILL0_wght400_GRAD0_opsz24.png" width="20px" height="20px" class="scroll_btn"></button>
@@ -157,7 +147,7 @@
                 </div>            
             </div>
         </div>
-            <div class="clearfix"></div>
+            <div class="clearfix"></div> -->
         <!-- Footer -->
         <div id="footer"></div>
         <script>
@@ -168,16 +158,6 @@
         
     </div>
 
-    <script src="xZoom-master/src/xzoom.js"></script>  
-    <script>
-        $(document).ready(function() {
-            $('.xzoom, .xzoom-gallery').xzoom({
-                zoomWidth: 400,
-                title: true,
-                tint: '#333',
-                Xoffset: 15
-            });
-        });
-    </script>
+
 </body>
 </html>

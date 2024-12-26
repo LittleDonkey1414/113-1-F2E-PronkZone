@@ -21,13 +21,13 @@
 
 /* 頁面間隙 */
 .top_blank {
-    height: 20px;
+    height: 0px;
     width: 100%;
 }
 
 /* 右側資訊欄 */
 .Product_Page_intro {
-    width: 400px;
+    width: 450px;
     margin: 10px auto;
 }
 
